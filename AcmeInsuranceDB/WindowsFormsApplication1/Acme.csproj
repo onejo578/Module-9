@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Business Logic Layer\Categories.cs" />
     <Compile Include="Business Logic Layer\Customers.cs" />
-    <Compile Include="Business Logic Layer\Product Types.cs" />
+    <Compile Include="Business Logic Layer\Product Types Class.cs" />
     <Compile Include="Business Logic Layer\Products.cs" />
     <Compile Include="Business Logic Layer\Sales.cs" />
     <Compile Include="Data Access Layer\ConnectionManager.cs" />
@@ -77,6 +77,12 @@
     <Compile Include="Presentation Layer\CategoriesSearch.Designer.cs">
       <DependentUpon>CategoriesSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\CategoriesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CategoriesUpdate.Designer.cs">
+      <DependentUpon>CategoriesUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="Presentation Layer\CustomerSearch.Designer.cs">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CustomersUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CustomersUpdate.Designer.cs">
+      <DependentUpon>CustomersUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\MainForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,12 @@
     <Compile Include="Presentation Layer\ProductsSearch.Designer.cs">
       <DependentUpon>ProductsSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ProductsUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ProductsUpdate.Designer.cs">
+      <DependentUpon>ProductsUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\ProductTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,12 @@
     <Compile Include="Presentation Layer\ProductTypesSearch.Designer.cs">
       <DependentUpon>ProductTypesSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ProductTypesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ProductTypesUpdate.Designer.cs">
+      <DependentUpon>ProductTypesUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Sales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +178,12 @@
     </Compile>
     <Compile Include="Presentation Layer\SalesSearch.Designer.cs">
       <DependentUpon>SalesSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\SalesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\SalesUpdate.Designer.cs">
+      <DependentUpon>SalesUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Tutorial.cs">
       <SubType>Form</SubType>
@@ -175,6 +205,9 @@
     <EmbeddedResource Include="Presentation Layer\CategoriesSearch.resx">
       <DependentUpon>CategoriesSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CategoriesUpdate.resx">
+      <DependentUpon>CategoriesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CustomersUpdate.resx">
+      <DependentUpon>CustomersUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -196,6 +232,9 @@
     <EmbeddedResource Include="Presentation Layer\ProductsSearch.resx">
       <DependentUpon>ProductsSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ProductsUpdate.resx">
+      <DependentUpon>ProductsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ProductTypes.resx">
       <DependentUpon>ProductTypes.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +244,9 @@
     <EmbeddedResource Include="Presentation Layer\ProductTypesSearch.resx">
       <DependentUpon>ProductTypesSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ProductTypesUpdate.resx">
+      <DependentUpon>ProductTypesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\SalesSearch.resx">
       <DependentUpon>SalesSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\SalesUpdate.resx">
+      <DependentUpon>SalesUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Tutorial.resx">
       <DependentUpon>Tutorial.cs</DependentUpon>

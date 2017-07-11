@@ -8,6 +8,7 @@ namespace AcmeInsuranceDB.Business_Logic_Layer
 {
     class Categories
     {
+        //Set-Get properties
         public int CategoryID { get; set; }
         public string Category { get; set; }
 

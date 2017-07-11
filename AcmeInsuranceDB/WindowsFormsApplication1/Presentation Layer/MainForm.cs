@@ -23,11 +23,6 @@ namespace AcmeInsuranceDB
 
         }
 
-        private void lblMainMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -84,8 +79,8 @@ namespace AcmeInsuranceDB
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCustomers viewForm = new frmCustomers();
-            viewForm.Show();
-            this.Hide();
+            viewForm.ShowDialog(); //ShowDialog
+            this.Hide(); //display____()
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +88,7 @@ namespace AcmeInsuranceDB
             frmSales viewForm = new frmSales();
             viewForm.Show();
             this.Hide();
+           
         }
 
         private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)

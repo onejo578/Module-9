@@ -54,6 +54,7 @@
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -83,6 +84,7 @@
             this.rbSearchByProductName.TabStop = true;
             this.rbSearchByProductName.Text = "Search by Product Name";
             this.rbSearchByProductName.UseVisualStyleBackColor = true;
+            this.rbSearchByProductName.CheckedChanged += new System.EventHandler(this.rbSearchByProductName_CheckedChanged);
             // 
             // rbListAllRows
             // 

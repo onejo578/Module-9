@@ -30,7 +30,6 @@ namespace AcmeInsuranceDB.Presentation_Layer
                     gender = "F";
                 }
                 
-
                 Customers customer = new Customers(0,
                     txtFirstName.Text,
                     txtLastName.Text,
@@ -64,13 +63,11 @@ namespace AcmeInsuranceDB.Presentation_Layer
                     cmd.ExecuteNonQuery();
                     cmd.Transaction.Commit();
                 }
+                //Add closing confirmation here
                 this.Close();
             }
-            
-            //Add closing confirmation here
         }
         
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmCustomers customers = new frmCustomers();
@@ -100,7 +97,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
             }
         catch
             {
-
+                //catch error here
             }
         }
 
@@ -167,6 +164,59 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomers viewForm = new frmCustomers();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSales viewForm = new frmSales();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories viewForm = new frmCategories();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts viewForm = new frmProducts();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void productTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductTypes viewForm = new frmProductTypes();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tutorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTutorial viewForm = new frmTutorial();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm1 = new frmAbout();
+            frm1.ShowDialog(this);
         }
     }
 }

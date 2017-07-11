@@ -10,41 +10,18 @@ using System.Windows.Forms;
 
 namespace AcmeInsuranceDB.Presentation_Layer
 {
-    public partial class frmProductTypesAdd : Form
+    public partial class frmCategoriesUpdate : Form
     {
-        public frmProductTypesAdd()
+        public frmCategoriesUpdate()
         {
             InitializeComponent();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmProductTypes productTypes = new frmProductTypes();
-            productTypes.Show();
+            frmCategories categories = new frmCategories();
+            categories.Show();
             this.Hide();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            
-
-
-
-
-
-
-
-        }
-        
-        private bool validateForm()
-        {
-            if (String.IsNullOrEmpty(txtProductType.Text))
-            {
-                MessageBox.Show("Please enter the Product Type.");
-                return false;
-            }
-
-            return true;
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)

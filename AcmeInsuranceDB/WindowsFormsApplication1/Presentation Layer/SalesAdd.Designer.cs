@@ -42,9 +42,19 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbSalesDetails = new System.Windows.Forms.GroupBox();
-            this.lblProductType = new System.Windows.Forms.Label();
-            this.cbProductType = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbSalesDetails.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbProduct
@@ -58,14 +68,14 @@
             // cbPayable
             // 
             this.cbPayable.FormattingEnabled = true;
-            this.cbPayable.Location = new System.Drawing.Point(141, 233);
+            this.cbPayable.Location = new System.Drawing.Point(141, 183);
             this.cbPayable.Name = "cbPayable";
             this.cbPayable.Size = new System.Drawing.Size(200, 24);
             this.cbPayable.TabIndex = 3;
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(141, 279);
+            this.dtpStartDate.Location = new System.Drawing.Point(141, 229);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
             this.dtpStartDate.TabIndex = 4;
@@ -100,7 +110,7 @@
             // lblPayable
             // 
             this.lblPayable.AutoSize = true;
-            this.lblPayable.Location = new System.Drawing.Point(21, 233);
+            this.lblPayable.Location = new System.Drawing.Point(21, 183);
             this.lblPayable.Name = "lblPayable";
             this.lblPayable.Size = new System.Drawing.Size(63, 17);
             this.lblPayable.TabIndex = 8;
@@ -109,7 +119,7 @@
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(21, 277);
+            this.lblStartDate.Location = new System.Drawing.Point(21, 227);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(76, 17);
             this.lblStartDate.TabIndex = 9;
@@ -131,8 +141,8 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(129, 391);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Location = new System.Drawing.Point(130, 338);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 17;
@@ -141,8 +151,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(246, 391);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(247, 338);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 16;
@@ -152,8 +162,8 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 391);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(13, 338);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
             this.btnAdd.TabIndex = 15;
@@ -163,8 +173,6 @@
             // 
             // gbSalesDetails
             // 
-            this.gbSalesDetails.Controls.Add(this.cbProductType);
-            this.gbSalesDetails.Controls.Add(this.lblProductType);
             this.gbSalesDetails.Controls.Add(this.lblLastName);
             this.gbSalesDetails.Controls.Add(this.lblFirstName);
             this.gbSalesDetails.Controls.Add(this.lblProduct);
@@ -174,33 +182,109 @@
             this.gbSalesDetails.Controls.Add(this.cbPayable);
             this.gbSalesDetails.Location = new System.Drawing.Point(12, 32);
             this.gbSalesDetails.Name = "gbSalesDetails";
-            this.gbSalesDetails.Size = new System.Drawing.Size(392, 327);
+            this.gbSalesDetails.Size = new System.Drawing.Size(392, 282);
             this.gbSalesDetails.TabIndex = 18;
             this.gbSalesDetails.TabStop = false;
             this.gbSalesDetails.Text = "Sales Details";
             // 
-            // lblProductType
+            // menuStrip1
             // 
-            this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(21, 183);
-            this.lblProductType.Name = "lblProductType";
-            this.lblProductType.Size = new System.Drawing.Size(97, 17);
-            this.lblProductType.TabIndex = 10;
-            this.lblProductType.Text = "Product Type:";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(448, 28);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // cbProductType
+            // fileToolStripMenuItem
             // 
-            this.cbProductType.FormattingEnabled = true;
-            this.cbProductType.Location = new System.Drawing.Point(141, 182);
-            this.cbProductType.Name = "cbProductType";
-            this.cbProductType.Size = new System.Drawing.Size(200, 24);
-            this.cbProductType.TabIndex = 19;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customersToolStripMenuItem,
+            this.salesToolStripMenuItem,
+            this.categoriesToolStripMenuItem,
+            this.productToolStripMenuItem,
+            this.productTypesToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.customersToolStripMenuItem.Text = "&Customers";
+            this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
+            // 
+            // salesToolStripMenuItem
+            // 
+            this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salesToolStripMenuItem.Text = "&Sales";
+            this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
+            // 
+            // categoriesToolStripMenuItem
+            // 
+            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.categoriesToolStripMenuItem.Text = "C&ategories";
+            this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
+            // 
+            // productToolStripMenuItem
+            // 
+            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productToolStripMenuItem.Text = "&Products";
+            this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
+            // 
+            // productTypesToolStripMenuItem
+            // 
+            this.productTypesToolStripMenuItem.Name = "productTypesToolStripMenuItem";
+            this.productTypesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productTypesToolStripMenuItem.Text = "Product &Types";
+            this.productTypesToolStripMenuItem.Click += new System.EventHandler(this.productTypesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tutorialToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // tutorialToolStripMenuItem
+            // 
+            this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
+            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tutorialToolStripMenuItem.Text = "T&utorial";
+            this.tutorialToolStripMenuItem.Click += new System.EventHandler(this.tutorialToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Text = "A&bout";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // frmSalesAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 503);
+            this.ClientSize = new System.Drawing.Size(448, 510);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -210,8 +294,11 @@
             this.Controls.Add(this.gbSalesDetails);
             this.Name = "frmSalesAdd";
             this.Text = "Add New Sale";
+            this.Load += new System.EventHandler(this.frmSalesAdd_Load);
             this.gbSalesDetails.ResumeLayout(false);
             this.gbSalesDetails.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +320,16 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbSalesDetails;
-        private System.Windows.Forms.Label lblProductType;
-        private System.Windows.Forms.ComboBox cbProductType;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

@@ -32,16 +32,14 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbProduct = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.rbSearchByPostcode = new System.Windows.Forms.RadioButton();
             this.rbSearchByCategory = new System.Windows.Forms.RadioButton();
             this.rbSearchByLastName = new System.Windows.Forms.RadioButton();
             this.rbListAllRows = new System.Windows.Forms.RadioButton();
-            this.cbProductType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(113, 248);
+            this.btnCancel.Location = new System.Drawing.Point(113, 194);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 36);
             this.btnCancel.TabIndex = 15;
@@ -51,7 +49,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(18, 248);
+            this.btnSearch.Location = new System.Drawing.Point(18, 194);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 36);
             this.btnSearch.TabIndex = 14;
@@ -74,17 +72,6 @@
             this.txtSearch.Size = new System.Drawing.Size(185, 22);
             this.txtSearch.TabIndex = 12;
             // 
-            // rbSearchByPostcode
-            // 
-            this.rbSearchByPostcode.AutoSize = true;
-            this.rbSearchByPostcode.Location = new System.Drawing.Point(18, 199);
-            this.rbSearchByPostcode.Name = "rbSearchByPostcode";
-            this.rbSearchByPostcode.Size = new System.Drawing.Size(182, 21);
-            this.rbSearchByPostcode.TabIndex = 11;
-            this.rbSearchByPostcode.TabStop = true;
-            this.rbSearchByPostcode.Text = "Search by Product Type";
-            this.rbSearchByPostcode.UseVisualStyleBackColor = true;
-            // 
             // rbSearchByCategory
             // 
             this.rbSearchByCategory.AutoSize = true;
@@ -95,6 +82,7 @@
             this.rbSearchByCategory.TabStop = true;
             this.rbSearchByCategory.Text = "Search by Product";
             this.rbSearchByCategory.UseVisualStyleBackColor = true;
+            this.rbSearchByCategory.CheckedChanged += new System.EventHandler(this.rbSearchByCategory_CheckedChanged);
             // 
             // rbSearchByLastName
             // 
@@ -106,6 +94,7 @@
             this.rbSearchByLastName.TabStop = true;
             this.rbSearchByLastName.Text = "Search by Last Name";
             this.rbSearchByLastName.UseVisualStyleBackColor = true;
+            this.rbSearchByLastName.CheckedChanged += new System.EventHandler(this.rbSearchByLastName_CheckedChanged);
             // 
             // rbListAllRows
             // 
@@ -117,32 +106,23 @@
             this.rbListAllRows.TabStop = true;
             this.rbListAllRows.Text = "List all rows";
             this.rbListAllRows.UseVisualStyleBackColor = true;
-            // 
-            // cbProductType
-            // 
-            this.cbProductType.FormattingEnabled = true;
-            this.cbProductType.Location = new System.Drawing.Point(221, 131);
-            this.cbProductType.Name = "cbProductType";
-            this.cbProductType.Size = new System.Drawing.Size(185, 24);
-            this.cbProductType.TabIndex = 16;
-            this.cbProductType.Visible = false;
+            this.rbListAllRows.CheckedChanged += new System.EventHandler(this.rbListAllRows_CheckedChanged);
             // 
             // frmSalesSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 302);
-            this.Controls.Add(this.cbProductType);
+            this.ClientSize = new System.Drawing.Size(426, 243);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbProduct);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.rbSearchByPostcode);
             this.Controls.Add(this.rbSearchByCategory);
             this.Controls.Add(this.rbSearchByLastName);
             this.Controls.Add(this.rbListAllRows);
             this.Name = "frmSalesSearch";
             this.Text = "Search Sales";
+            this.Load += new System.EventHandler(this.frmSalesSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,10 +134,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbProduct;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.RadioButton rbSearchByPostcode;
         private System.Windows.Forms.RadioButton rbSearchByCategory;
         private System.Windows.Forms.RadioButton rbSearchByLastName;
         private System.Windows.Forms.RadioButton rbListAllRows;
-        private System.Windows.Forms.ComboBox cbProductType;
     }
 }

@@ -28,78 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lvSales = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbProduct = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.rbSearchByCategory = new System.Windows.Forms.RadioButton();
+            this.rbSearchByLastName = new System.Windows.Forms.RadioButton();
+            this.rbListAllRows = new System.Windows.Forms.RadioButton();
+            this.dgSalesView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSalesView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lvSales
-            // 
-            this.lvSales.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader7,
-            this.columnHeader6});
-            this.lvSales.FullRowSelect = true;
-            this.lvSales.GridLines = true;
-            this.lvSales.Location = new System.Drawing.Point(27, 22);
-            this.lvSales.Name = "lvSales";
-            this.lvSales.Size = new System.Drawing.Size(738, 240);
-            this.lvSales.TabIndex = 0;
-            this.lvSales.UseCompatibleStateImageBehavior = false;
-            this.lvSales.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Sale ID";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "First Name";
-            this.columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Last Name";
-            this.columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Product";
-            this.columnHeader4.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Payable";
-            this.columnHeader5.Width = 80;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Product Type";
-            this.columnHeader7.Width = 80;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Start Date";
-            this.columnHeader6.Width = 80;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(27, 284);
+            this.btnAdd.Location = new System.Drawing.Point(14, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 39);
             this.btnAdd.TabIndex = 8;
@@ -109,16 +77,17 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(127, 284);
+            this.btnUpdate.Location = new System.Drawing.Point(113, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 39);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(227, 284);
+            this.btnDelete.Location = new System.Drawing.Point(213, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 39);
             this.btnDelete.TabIndex = 6;
@@ -127,7 +96,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(327, 284);
+            this.btnSearch.Location = new System.Drawing.Point(313, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 39);
             this.btnSearch.TabIndex = 5;
@@ -137,7 +106,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(432, 284);
+            this.btnClose.Location = new System.Drawing.Point(418, 3);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(87, 39);
@@ -146,37 +115,303 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 360);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(976, 160);
+            this.panel1.TabIndex = 10;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.cbProduct);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.rbSearchByCategory);
+            this.groupBox1.Controls.Add(this.rbSearchByLastName);
+            this.groupBox1.Controls.Add(this.rbListAllRows);
+            this.groupBox1.Location = new System.Drawing.Point(511, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(412, 148);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(101, 99);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 36);
+            this.btnCancel.TabIndex = 22;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 99);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "&Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cbProduct
+            // 
+            this.cbProduct.FormattingEnabled = true;
+            this.cbProduct.Location = new System.Drawing.Point(219, 51);
+            this.cbProduct.Name = "cbProduct";
+            this.cbProduct.Size = new System.Drawing.Size(185, 24);
+            this.cbProduct.TabIndex = 20;
+            this.cbProduct.Visible = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(219, 17);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(185, 22);
+            this.txtSearch.TabIndex = 19;
+            // 
+            // rbSearchByCategory
+            // 
+            this.rbSearchByCategory.AutoSize = true;
+            this.rbSearchByCategory.Location = new System.Drawing.Point(16, 72);
+            this.rbSearchByCategory.Name = "rbSearchByCategory";
+            this.rbSearchByCategory.Size = new System.Drawing.Size(146, 21);
+            this.rbSearchByCategory.TabIndex = 18;
+            this.rbSearchByCategory.TabStop = true;
+            this.rbSearchByCategory.Text = "Search by Product";
+            this.rbSearchByCategory.UseVisualStyleBackColor = true;
+            // 
+            // rbSearchByLastName
+            // 
+            this.rbSearchByLastName.AutoSize = true;
+            this.rbSearchByLastName.Location = new System.Drawing.Point(16, 45);
+            this.rbSearchByLastName.Name = "rbSearchByLastName";
+            this.rbSearchByLastName.Size = new System.Drawing.Size(165, 21);
+            this.rbSearchByLastName.TabIndex = 17;
+            this.rbSearchByLastName.TabStop = true;
+            this.rbSearchByLastName.Text = "Search by Last Name";
+            this.rbSearchByLastName.UseVisualStyleBackColor = true;
+            // 
+            // rbListAllRows
+            // 
+            this.rbListAllRows.AutoSize = true;
+            this.rbListAllRows.Location = new System.Drawing.Point(16, 21);
+            this.rbListAllRows.Name = "rbListAllRows";
+            this.rbListAllRows.Size = new System.Drawing.Size(102, 21);
+            this.rbListAllRows.TabIndex = 16;
+            this.rbListAllRows.TabStop = true;
+            this.rbListAllRows.Text = "List all rows";
+            this.rbListAllRows.UseVisualStyleBackColor = true;
+            // 
+            // dgSalesView
+            // 
+            this.dgSalesView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgSalesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSalesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Cu,
+            this.Column4,
+            this.Column5,
+            this.Column7});
+            this.dgSalesView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSalesView.Location = new System.Drawing.Point(0, 0);
+            this.dgSalesView.MultiSelect = false;
+            this.dgSalesView.Name = "dgSalesView";
+            this.dgSalesView.ReadOnly = true;
+            this.dgSalesView.RowTemplate.Height = 24;
+            this.dgSalesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgSalesView.Size = new System.Drawing.Size(976, 360);
+            this.dgSalesView.TabIndex = 24;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SaleID";
+            this.Column1.HeaderText = "Sale ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Cu
+            // 
+            this.Cu.DataPropertyName = "CustomerID";
+            this.Cu.HeaderText = "Customer ID";
+            this.Cu.Name = "Cu";
+            this.Cu.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ProductID";
+            this.Column4.HeaderText = "Product ID";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Payable";
+            this.Column5.HeaderText = "Payable";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "StartDate";
+            this.Column7.HeaderText = "Start Date";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(976, 28);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customersToolStripMenuItem,
+            this.salesToolStripMenuItem,
+            this.categoriesToolStripMenuItem,
+            this.productToolStripMenuItem,
+            this.productTypesToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.customersToolStripMenuItem.Text = "&Customers";
+            this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
+            // 
+            // salesToolStripMenuItem
+            // 
+            this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salesToolStripMenuItem.Text = "&Sales";
+            this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
+            // 
+            // categoriesToolStripMenuItem
+            // 
+            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.categoriesToolStripMenuItem.Text = "C&ategories";
+            this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
+            // 
+            // productToolStripMenuItem
+            // 
+            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productToolStripMenuItem.Text = "&Products";
+            this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
+            // 
+            // productTypesToolStripMenuItem
+            // 
+            this.productTypesToolStripMenuItem.Name = "productTypesToolStripMenuItem";
+            this.productTypesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productTypesToolStripMenuItem.Text = "Product &Types";
+            this.productTypesToolStripMenuItem.Click += new System.EventHandler(this.productTypesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tutorialToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // tutorialToolStripMenuItem
+            // 
+            this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
+            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tutorialToolStripMenuItem.Text = "T&utorial";
+            this.tutorialToolStripMenuItem.Click += new System.EventHandler(this.tutorialToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Text = "A&bout";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 375);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lvSales);
+            this.ClientSize = new System.Drawing.Size(976, 520);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.dgSalesView);
+            this.Controls.Add(this.panel1);
             this.Name = "frmSales";
             this.Text = "Sales Details";
+            this.Load += new System.EventHandler(this.frmSales_Load);
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSalesView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lvSales;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgSalesView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbProduct;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.RadioButton rbSearchByCategory;
+        private System.Windows.Forms.RadioButton rbSearchByLastName;
+        private System.Windows.Forms.RadioButton rbListAllRows;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

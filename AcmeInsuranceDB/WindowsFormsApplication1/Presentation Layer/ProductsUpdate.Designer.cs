@@ -1,6 +1,6 @@
 ﻿namespace AcmeInsuranceDB.Presentation_Layer
 {
-    partial class frmProductTypes
+    partial class frmProductsUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.lblProductType = new System.Windows.Forms.Label();
+            this.cbProductTypeID = new System.Windows.Forms.ComboBox();
+            this.txtYearlyPremium = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.lblYearlyPremium = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgProductTypesView = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbProductDetails = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,102 +48,86 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProductTypesView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAdd
+            // btnCancel
             // 
-            this.btnAdd.Location = new System.Drawing.Point(0, 17);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 28);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "&Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnCancel.Location = new System.Drawing.Point(115, 203);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(73, 28);
+            this.btnCancel.TabIndex = 29;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblProductType
+            // 
+            this.lblProductType.AutoSize = true;
+            this.lblProductType.Location = new System.Drawing.Point(32, 131);
+            this.lblProductType.Name = "lblProductType";
+            this.lblProductType.Size = new System.Drawing.Size(114, 17);
+            this.lblProductType.TabIndex = 28;
+            this.lblProductType.Text = "Product Type ID:";
+            // 
+            // cbProductTypeID
+            // 
+            this.cbProductTypeID.FormattingEnabled = true;
+            this.cbProductTypeID.Location = new System.Drawing.Point(181, 128);
+            this.cbProductTypeID.Name = "cbProductTypeID";
+            this.cbProductTypeID.Size = new System.Drawing.Size(162, 24);
+            this.cbProductTypeID.TabIndex = 27;
+            // 
+            // txtYearlyPremium
+            // 
+            this.txtYearlyPremium.Location = new System.Drawing.Point(181, 89);
+            this.txtYearlyPremium.Name = "txtYearlyPremium";
+            this.txtYearlyPremium.Size = new System.Drawing.Size(162, 22);
+            this.txtYearlyPremium.TabIndex = 26;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(181, 54);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(162, 22);
+            this.txtProductName.TabIndex = 25;
+            // 
+            // lblYearlyPremium
+            // 
+            this.lblYearlyPremium.AutoSize = true;
+            this.lblYearlyPremium.Location = new System.Drawing.Point(32, 89);
+            this.lblYearlyPremium.Name = "lblYearlyPremium";
+            this.lblYearlyPremium.Size = new System.Drawing.Size(111, 17);
+            this.lblYearlyPremium.TabIndex = 24;
+            this.lblYearlyPremium.Text = "Yearly Premium:";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(32, 54);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(102, 17);
+            this.lblProductName.TabIndex = 23;
+            this.lblProductName.Text = "Product Name:";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(89, 17);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 203);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 28);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Size = new System.Drawing.Size(73, 28);
+            this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // gbProductDetails
             // 
-            this.btnDelete.Location = new System.Drawing.Point(178, 17);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 28);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "&Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(356, 17);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(82, 28);
-            this.btnClose.TabIndex = 20;
-            this.btnClose.Text = "&Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(267, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 28);
-            this.btnSearch.TabIndex = 21;
-            this.btnSearch.Text = "&Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 151);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 62);
-            this.panel1.TabIndex = 22;
-            // 
-            // dgProductTypesView
-            // 
-            this.dgProductTypesView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgProductTypesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProductTypesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1});
-            this.dgProductTypesView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgProductTypesView.Location = new System.Drawing.Point(0, 0);
-            this.dgProductTypesView.MultiSelect = false;
-            this.dgProductTypesView.Name = "dgProductTypesView";
-            this.dgProductTypesView.ReadOnly = true;
-            this.dgProductTypesView.RowTemplate.Height = 24;
-            this.dgProductTypesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProductTypesView.Size = new System.Drawing.Size(486, 151);
-            this.dgProductTypesView.TabIndex = 23;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Type ID";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Product Types";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.gbProductDetails.Location = new System.Drawing.Point(12, 12);
+            this.gbProductDetails.Name = "gbProductDetails";
+            this.gbProductDetails.Size = new System.Drawing.Size(368, 171);
+            this.gbProductDetails.TabIndex = 30;
+            this.gbProductDetails.TabStop = false;
+            this.gbProductDetails.Text = "Product Details";
             // 
             // menuStrip1
             // 
@@ -154,8 +138,8 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(486, 28);
-            this.menuStrip1.TabIndex = 24;
+            this.menuStrip1.Size = new System.Drawing.Size(429, 28);
+            this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
@@ -237,20 +221,23 @@
             this.aboutToolStripMenuItem.Text = "A&bout";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // frmProductTypes
+            // frmProductsUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 213);
+            this.ClientSize = new System.Drawing.Size(429, 263);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dgProductTypesView);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmProductTypes";
-            this.Text = "ProductTypes";
-            this.Load += new System.EventHandler(this.frmProductTypes_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgProductTypesView)).EndInit();
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblProductType);
+            this.Controls.Add(this.cbProductTypeID);
+            this.Controls.Add(this.txtYearlyPremium);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.lblYearlyPremium);
+            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.gbProductDetails);
+            this.Name = "frmProductsUpdate";
+            this.Text = "Update Product Details";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -260,15 +247,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblProductType;
+        private System.Windows.Forms.ComboBox cbProductTypeID;
+        private System.Windows.Forms.TextBox txtYearlyPremium;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label lblYearlyPremium;
+        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgProductTypesView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.GroupBox gbProductDetails;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;

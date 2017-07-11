@@ -50,3 +50,8 @@ E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeIns
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmTutorial.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\Acme.csproj.GenerateResource.Cache
+E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCategoriesUpdate.resources
+E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCustomersUpdate.resources
+E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmProductsUpdate.resources
+E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmProductTypesUpdate.resources
+E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmSalesUpdate.resources

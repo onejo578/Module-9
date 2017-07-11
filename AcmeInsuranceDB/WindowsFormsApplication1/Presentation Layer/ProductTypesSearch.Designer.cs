@@ -33,6 +33,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.rbSearchByProductName = new System.Windows.Forms.RadioButton();
             this.rbListAllRows = new System.Windows.Forms.RadioButton();
+            this.cbProductType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -71,6 +72,7 @@
             this.rbSearchByProductName.TabStop = true;
             this.rbSearchByProductName.Text = "Search by Product Type";
             this.rbSearchByProductName.UseVisualStyleBackColor = true;
+            this.rbSearchByProductName.CheckedChanged += new System.EventHandler(this.rbSearchByProductName_CheckedChanged);
             // 
             // rbListAllRows
             // 
@@ -82,12 +84,22 @@
             this.rbListAllRows.TabStop = true;
             this.rbListAllRows.Text = "List all rows";
             this.rbListAllRows.UseVisualStyleBackColor = true;
+            this.rbListAllRows.CheckedChanged += new System.EventHandler(this.rbListAllRows_CheckedChanged);
+            // 
+            // cbProductType
+            // 
+            this.cbProductType.FormattingEnabled = true;
+            this.cbProductType.Location = new System.Drawing.Point(227, 70);
+            this.cbProductType.Name = "cbProductType";
+            this.cbProductType.Size = new System.Drawing.Size(185, 24);
+            this.cbProductType.TabIndex = 22;
             // 
             // frmProductTypesSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 177);
+            this.Controls.Add(this.cbProductType);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -95,6 +107,7 @@
             this.Controls.Add(this.rbListAllRows);
             this.Name = "frmProductTypesSearch";
             this.Text = "Search Product Types";
+            this.Load += new System.EventHandler(this.frmProductTypesSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +120,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.RadioButton rbSearchByProductName;
         private System.Windows.Forms.RadioButton rbListAllRows;
+        private System.Windows.Forms.ComboBox cbProductType;
     }
 }

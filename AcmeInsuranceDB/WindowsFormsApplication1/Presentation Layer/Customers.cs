@@ -20,71 +20,6 @@ namespace AcmeInsuranceDB.Presentation_Layer
             InitializeComponent();
         }
 
-
-        //private void DisplayCustomers()
-        //{
-        //    string selectQuery;
-
-        //    selectQuery = "SELECT Customers.CustomerID, Categories.Category, Customers.FirstName, Customers.LastName, ";
-        //    selectQuery = selectQuery + "Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, ";
-        //    selectQuery = selectQuery + "Customers.Gender, ";
-        //    selectQuery = selectQuery + "FROM Customers INNER JOIN ";
-        //    selectQuery = selectQuery + "Categories ON Customers.CategoryID = Categories.CategoryID";
-
-        //    SqlConnection conn = ConnectionManager.DatabaseConnection();
-        //    SqlDataReader rdr = null;
-        //    try
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand(selectQuery, conn);
-        //        rdr = cmd.ExecuteReader();
-        //        while (rdr.Read())
-        //        {
-        //            // Define the list items
-
-        //            string gender = "Male";
-        //            if (rdr["Gender"].ToString() == "F")
-        //            {
-        //                gender = "Female";
-        //            }
-                    
-        //            Customers customer = new Customers(int.Parse(rdr["CustomerID"].ToString()),
-        //                                 rdr["FirstName"].ToString(),
-        //                                 rdr["LastName"].ToString(),
-        //                                rdr["Address"].ToString(),
-        //                                 rdr["Suburb"].ToString(),
-        //                                 rdr["State"].ToString(),
-        //                                 gender, 
-        //                                 int.Parse(rdr["Postcode"].ToString()),
-        //                                 int.Parse(rdr["CategoryID"].ToString()),
-        //                                 DateTime.Parse(rdr["BirthDate"].ToString()));
-                                         
-              
-
-        //            ListViewItem lvi = new ListViewItem(customer.CustomerID.ToString());
-        //            lvi.SubItems.Add(customer.FirstName);
-        //            lvi.SubItems.Add(customer.LastName);
-        //            lvi.SubItems.Add(customer.Address);
-        //            lvi.SubItems.Add(customer.Suburb);
-        //            lvi.SubItems.Add(customer.State);
-        //            lvi.SubItems.Add(customer.Gender);
-        //            lvi.SubItems.Add(customer.PostCode.ToString());
-        //            //lvi.SubItems.Add(customer.CategoryID);
-        //            lvi.SubItems.Add(customer.BirthDate.ToString());
-
-        //            lvCustomers.Items.Add(lvi);
-        //        }
-        //        if (rdr != null)
-        //            rdr.Close();
-        //        conn.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Unsuccessful" + ex);
-        //    }
-        //}
-        
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             frmMainForm mainForm = new frmMainForm();
@@ -95,15 +30,10 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmCustomersAdd viewForm = new frmCustomersAdd();
-            viewForm.Show();
+            viewForm.ShowDialog();
+
             this.Hide();
-
-            WindowsFormsApplication1.GlobalVariables.selectedCustomerID = 0;
-            frmCustomersAdd editForm = new frmCustomersAdd();
-            editForm.ShowDialog();
-            displayCustomers();
-
-
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -113,16 +43,18 @@ namespace AcmeInsuranceDB.Presentation_Layer
             this.Hide();
         }
 
-        private void frmCustomers_Load(object sender, EventArgs e)
-        {
-            displayCustomers();
-        }
+
 
         private void frmCustomers_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmMainForm mainForm = new AcmeInsuranceDB.frmMainForm();
             mainForm.Show();
             this.Hide();
+        }
+
+        private void frmCustomers_Load(object sender, EventArgs e)
+        {
+            displayCustomers();
         }
 
         private void displayCustomers()
@@ -140,7 +72,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
                         Customers customer = new Customers(int.Parse(rdr["CustomerID"].ToString()),
                          rdr["FirstName"].ToString(),
                          rdr["LastName"].ToString(),
-                        rdr["Address"].ToString(),
+                         rdr["Address"].ToString(),
                          rdr["Suburb"].ToString(),
                          rdr["State"].ToString(),
                          rdr["Gender"].ToString(),
@@ -159,5 +91,149 @@ namespace AcmeInsuranceDB.Presentation_Layer
 
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmCustomersUpdate viewForm = new frmCustomersUpdate();
+            viewForm.Show();
+            this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.dgCustomersView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a Customer to Delete.");
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to delete this record?", "Customer Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+            ////int selectedCustomerID = int.Parse(dgCustomersView.SelectedRows[0].Text);
+
+            //string deleteQuery = "sp_Customers_DeleteCustomer";
+            //DataGridViewRow selectedRow = dgCustomersView.SelectedRows[0]; //Selecting the row
+            //var deleteCustomer = (Customers)selectedRow.DataBoundItem; //setting deleteCustomer to an instance of the Customer Class of the selected row.
+
+            //SqlConnection conn = ConnectionManager.DatabaseConnection();
+            ////conn.Open();
+            //SqlCommand cmd = new SqlCommand(deleteQuery, conn);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@CustomerID", dgCustomersView.Rows[0].Selected); //dgCustomersView.Rows[0].Selected ---> is that legit?
+            //cmd.Transaction = conn.BeginTransaction();
+            //cmd.ExecuteNonQuery();
+            //cmd.Transaction.Commit();
+
+            //conn.Close();
+
+            ////dgCustomersView.Rows.Clear();
+            //displayCustomers();
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+        }
+
+        //private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void productTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void tutorialToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            displayCustomers();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSales viewForm = new frmSales();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories viewForm = new frmCategories();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts viewForm = new frmProducts();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void productTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductTypes viewForm = new frmProductTypes();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tutorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTutorial viewForm = new frmTutorial();
+            viewForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm1 = new frmAbout();
+            frm1.ShowDialog(this);
+        }
+
     }
-}
+    }
+

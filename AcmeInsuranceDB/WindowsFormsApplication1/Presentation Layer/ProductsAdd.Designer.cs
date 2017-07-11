@@ -33,10 +33,22 @@
             this.lblYearlyPremium = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtYearlyPremium = new System.Windows.Forms.TextBox();
-            this.cbProductType = new System.Windows.Forms.ComboBox();
-            this.lblProductType = new System.Windows.Forms.Label();
+            this.cbProductTypeID = new System.Windows.Forms.ComboBox();
+            this.lblProductTypeID = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbProductDetails = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -48,6 +60,7 @@
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblProductName
             // 
@@ -81,22 +94,22 @@
             this.txtYearlyPremium.Size = new System.Drawing.Size(162, 22);
             this.txtYearlyPremium.TabIndex = 17;
             // 
-            // cbProductType
+            // cbProductTypeID
             // 
-            this.cbProductType.FormattingEnabled = true;
-            this.cbProductType.Location = new System.Drawing.Point(182, 134);
-            this.cbProductType.Name = "cbProductType";
-            this.cbProductType.Size = new System.Drawing.Size(162, 24);
-            this.cbProductType.TabIndex = 18;
+            this.cbProductTypeID.FormattingEnabled = true;
+            this.cbProductTypeID.Location = new System.Drawing.Point(182, 134);
+            this.cbProductTypeID.Name = "cbProductTypeID";
+            this.cbProductTypeID.Size = new System.Drawing.Size(162, 24);
+            this.cbProductTypeID.TabIndex = 18;
             // 
-            // lblProductType
+            // lblProductTypeID
             // 
-            this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(33, 137);
-            this.lblProductType.Name = "lblProductType";
-            this.lblProductType.Size = new System.Drawing.Size(97, 17);
-            this.lblProductType.TabIndex = 19;
-            this.lblProductType.Text = "Product Type:";
+            this.lblProductTypeID.AutoSize = true;
+            this.lblProductTypeID.Location = new System.Drawing.Point(33, 137);
+            this.lblProductTypeID.Name = "lblProductTypeID";
+            this.lblProductTypeID.Size = new System.Drawing.Size(114, 17);
+            this.lblProductTypeID.TabIndex = 19;
+            this.lblProductTypeID.Text = "Product Type ID:";
             // 
             // btnCancel
             // 
@@ -117,14 +130,107 @@
             this.gbProductDetails.TabStop = false;
             this.gbProductDetails.Text = "Product Details";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(413, 28);
+            this.menuStrip1.TabIndex = 22;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customersToolStripMenuItem,
+            this.salesToolStripMenuItem,
+            this.categoriesToolStripMenuItem,
+            this.productToolStripMenuItem,
+            this.productTypesToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.customersToolStripMenuItem.Text = "&Customers";
+            this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
+            // 
+            // salesToolStripMenuItem
+            // 
+            this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salesToolStripMenuItem.Text = "&Sales";
+            this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
+            // 
+            // categoriesToolStripMenuItem
+            // 
+            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.categoriesToolStripMenuItem.Text = "C&ategories";
+            this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
+            // 
+            // productToolStripMenuItem
+            // 
+            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productToolStripMenuItem.Text = "&Products";
+            this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
+            // 
+            // productTypesToolStripMenuItem
+            // 
+            this.productTypesToolStripMenuItem.Name = "productTypesToolStripMenuItem";
+            this.productTypesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productTypesToolStripMenuItem.Text = "Product &Types";
+            this.productTypesToolStripMenuItem.Click += new System.EventHandler(this.productTypesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tutorialToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // tutorialToolStripMenuItem
+            // 
+            this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
+            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tutorialToolStripMenuItem.Text = "T&utorial";
+            this.tutorialToolStripMenuItem.Click += new System.EventHandler(this.tutorialToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Text = "A&bout";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // frmProductsAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 266);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.lblProductType);
-            this.Controls.Add(this.cbProductType);
+            this.Controls.Add(this.lblProductTypeID);
+            this.Controls.Add(this.cbProductTypeID);
             this.Controls.Add(this.txtYearlyPremium);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.lblYearlyPremium);
@@ -133,6 +239,8 @@
             this.Controls.Add(this.gbProductDetails);
             this.Name = "frmProductsAdd";
             this.Text = "Add New Product";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +252,20 @@
         private System.Windows.Forms.Label lblYearlyPremium;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtYearlyPremium;
-        private System.Windows.Forms.ComboBox cbProductType;
-        private System.Windows.Forms.Label lblProductType;
+        private System.Windows.Forms.ComboBox cbProductTypeID;
+        private System.Windows.Forms.Label lblProductTypeID;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox gbProductDetails;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
