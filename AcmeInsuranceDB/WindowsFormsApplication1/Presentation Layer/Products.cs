@@ -34,13 +34,6 @@ namespace AcmeInsuranceDB.Presentation_Layer
             this.Hide();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            frmProductsSearch viewForm = new frmProductsSearch();
-            viewForm.Show();
-            this.Hide();
-        }
-
         private void frmProducts_Load(object sender, EventArgs e)
         {
             displayProducts();
@@ -58,12 +51,14 @@ namespace AcmeInsuranceDB.Presentation_Layer
                 {
                     while (rdr.Read())
                     {
-                        Products customer = new Products(
+                         var products = new Products
+                         (int.Parse(rdr["ProductID"].ToString()),
+                         int.Parse(rdr["ProductTypeID"].ToString()),
                          rdr["ProductName"].ToString(),
-                         int.Parse(rdr["YearlyPremium"].ToString()),
-                        rdr["ProductTypeID"].ToString());
+                         int.Parse(rdr["YearlyPremium"].ToString())
+                         );
 
-                        productsList.Add(customer);
+                        productsList.Add(products);
                     }
                     dgProductsView.DataSource = productsList;
                 }
@@ -124,6 +119,24 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             Form frm1 = new frmAbout();
             frm1.ShowDialog(this);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (rbListAllRows.Checked == true)
+            {
+
+            }
+
+            if (rbSearchByProductName.Checked == true)
+            {
+                //"SELECT * FROM Products WHERE Product.ProductName = " + txtSearch.Text + "'";
+            }
+
+            if (rbSearchByYearlyPremium.Checked == true)
+            {
+                //"SELECT * FROM Products WHERE Product.YearlyPremium = " + txtSearch.Text + "'";
+            }
         }
     }
 }

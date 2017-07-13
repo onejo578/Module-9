@@ -51,6 +51,32 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void frmProductTypes_Load(object sender, EventArgs e)
         {
             displayProductTypes();
+
+            string populateProductTypeID = "SELECT * FROM ProductTypes";
+            List<Product_Types_Class> productTypeIDList = new List<Product_Types_Class>();
+            try
+            {
+                using (var con = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand(populateProductTypeID, con))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        var producttypeID = new Product_Types_Class(int.Parse(rdr["ProductTypeID"].ToString()),
+                            rdr["ProductType"].ToString());
+                       
+                        productTypeIDList.Add(producttypeID);
+                    }
+                }
+                cbProductType.DataSource = productTypeIDList;
+                cbProductType.DisplayMember = "ProductTypeID";
+
+            }
+            catch
+            {
+                //catch error here
+            }
+
         }
 
         private void displayProductTypes()
@@ -65,9 +91,9 @@ namespace AcmeInsuranceDB.Presentation_Layer
                 {
                     while (rdr.Read())
                     {
-                        Product_Types_Class producttypes = new Product_Types_Class
+                        var producttypes = new Product_Types_Class
                          (int.Parse(rdr["ProductTypeID"].ToString()),
-                         rdr["ProductTypes"].ToString());
+                         rdr["ProductType"].ToString());
 
                         productTypesList.Add(producttypes);
                     }

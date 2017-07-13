@@ -23,7 +23,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmCategories categories = new frmCategories();
-            categories.Show();
+            categories.ShowDialog();
             this.Hide();
         }
         
@@ -49,7 +49,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
                 using (var cmd = new SqlCommand("sp_Categories_CreateCategory ", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    SqlParameter newcategoryid = cmd.Parameters.Add("NewCategoryID", SqlDbType.Int);
+                    SqlParameter newcategoryid = cmd.Parameters.Add("NewCategoryID", SqlDbType.Int); //~~~~~~~~~~~
                     newcategoryid.Direction = ParameterDirection.Output;
                     cmd.Parameters.AddWithValue("Category", txtCategory.Text);
                     

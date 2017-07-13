@@ -35,12 +35,12 @@ namespace AcmeInsuranceDB.Presentation_Layer
             this.Hide();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            frmCategoriesSearch viewForm = new frmCategoriesSearch();
-            viewForm.Show();
-            this.Hide();
-        }
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    frmCategoriesSearch viewForm = new frmCategoriesSearch();
+        //    viewForm.Show();
+        //    this.Hide();
+        //}
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -61,8 +61,10 @@ namespace AcmeInsuranceDB.Presentation_Layer
                 {
                     while (rdr.Read())
                     {
-                        Categories category = new Categories(int.Parse(rdr["CategoryID"].ToString()),
-                         rdr["Category"].ToString());
+                        Categories category = new Categories
+                         (int.Parse(rdr["CategoryID"].ToString()),
+                         rdr["Category"].ToString()
+                         );
 
                         categoriesList.Add(category);
                     }
@@ -79,6 +81,32 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void frmCategories_Load(object sender, EventArgs e)
         {
             displayCategories();
+
+            string populateCategory = "SELECT * FROM Categories";
+            List<Categories> categoriesList = new List<Categories>();
+            try
+            {
+                using (var con = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand(populateCategory, con))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        var category = new Categories(int.Parse(rdr["CategoryID"].ToString()), rdr["Category"].ToString());
+                        categoriesList.Add(category);
+                    }
+                }
+                cbCategory.DataSource = categoriesList;
+                cbCategory.DisplayMember = "Category";
+                cbCategory.ValueMember = "CategoryID";
+            }
+            catch
+            {
+                //catch error here
+            }
+
+
+
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)

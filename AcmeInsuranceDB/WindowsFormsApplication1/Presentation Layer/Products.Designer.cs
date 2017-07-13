@@ -32,19 +32,18 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.rbSearchByYearlyPremium = new System.Windows.Forms.RadioButton();
             this.rbSearchByProductName = new System.Windows.Forms.RadioButton();
             this.rbListAllRows = new System.Windows.Forms.RadioButton();
             this.dgProductsView = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +74,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(358, 16);
+            this.btnClose.Location = new System.Drawing.Point(270, 16);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 39);
@@ -102,66 +101,46 @@
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(269, 16);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 39);
-            this.btnSearch.TabIndex = 10;
-            this.btnSearch.Text = "&Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gbSearch);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 285);
+            this.panel1.Location = new System.Drawing.Point(0, 315);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 181);
+            this.panel1.Size = new System.Drawing.Size(834, 146);
             this.panel1.TabIndex = 11;
             // 
             // gbSearch
             // 
-            this.gbSearch.Controls.Add(this.btnCancel);
-            this.gbSearch.Controls.Add(this.button1);
+            this.gbSearch.Controls.Add(this.btnSearch);
             this.gbSearch.Controls.Add(this.txtSearch);
             this.gbSearch.Controls.Add(this.rbSearchByYearlyPremium);
             this.gbSearch.Controls.Add(this.rbSearchByProductName);
             this.gbSearch.Controls.Add(this.rbListAllRows);
-            this.gbSearch.Location = new System.Drawing.Point(439, 16);
+            this.gbSearch.Location = new System.Drawing.Point(351, 16);
             this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Size = new System.Drawing.Size(383, 157);
+            this.gbSearch.Size = new System.Drawing.Size(383, 108);
             this.gbSearch.TabIndex = 11;
             this.gbSearch.TabStop = false;
             this.gbSearch.Text = "Search";
             // 
-            // btnCancel
+            // btnSearch
             // 
-            this.btnCancel.Location = new System.Drawing.Point(103, 115);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 36);
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "&Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(212, 64);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 36);
+            this.btnSearch.TabIndex = 20;
+            this.btnSearch.Text = "&Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(212, 33);
+            this.txtSearch.Location = new System.Drawing.Point(212, 24);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(165, 22);
             this.txtSearch.TabIndex = 19;
@@ -169,7 +148,7 @@
             // rbSearchByYearlyPremium
             // 
             this.rbSearchByYearlyPremium.AutoSize = true;
-            this.rbSearchByYearlyPremium.Location = new System.Drawing.Point(8, 88);
+            this.rbSearchByYearlyPremium.Location = new System.Drawing.Point(8, 79);
             this.rbSearchByYearlyPremium.Name = "rbSearchByYearlyPremium";
             this.rbSearchByYearlyPremium.Size = new System.Drawing.Size(196, 21);
             this.rbSearchByYearlyPremium.TabIndex = 18;
@@ -180,7 +159,7 @@
             // rbSearchByProductName
             // 
             this.rbSearchByProductName.AutoSize = true;
-            this.rbSearchByProductName.Location = new System.Drawing.Point(8, 61);
+            this.rbSearchByProductName.Location = new System.Drawing.Point(8, 52);
             this.rbSearchByProductName.Name = "rbSearchByProductName";
             this.rbSearchByProductName.Size = new System.Drawing.Size(187, 21);
             this.rbSearchByProductName.TabIndex = 17;
@@ -191,7 +170,7 @@
             // rbListAllRows
             // 
             this.rbListAllRows.AutoSize = true;
-            this.rbListAllRows.Location = new System.Drawing.Point(8, 34);
+            this.rbListAllRows.Location = new System.Drawing.Point(8, 25);
             this.rbListAllRows.Name = "rbListAllRows";
             this.rbListAllRows.Size = new System.Drawing.Size(102, 21);
             this.rbListAllRows.TabIndex = 16;
@@ -204,36 +183,47 @@
             this.dgProductsView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgProductsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProductsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column3,
             this.Column1,
-            this.Column2,
-            this.Column3});
+            this.Column2});
             this.dgProductsView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgProductsView.Location = new System.Drawing.Point(0, 0);
+            this.dgProductsView.Location = new System.Drawing.Point(0, 28);
             this.dgProductsView.MultiSelect = false;
             this.dgProductsView.Name = "dgProductsView";
             this.dgProductsView.ReadOnly = true;
             this.dgProductsView.RowTemplate.Height = 24;
             this.dgProductsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProductsView.Size = new System.Drawing.Size(834, 285);
+            this.dgProductsView.Size = new System.Drawing.Size(834, 287);
             this.dgProductsView.TabIndex = 12;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ProductID";
+            this.Column4.HeaderText = "Product ID";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ProductTypeID";
+            this.Column3.HeaderText = "Product Type ID";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "ProductName";
             this.Column1.HeaderText = "Product Name";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "YearlyPremium";
             this.Column2.HeaderText = "Yearly Premium";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Type ID";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // menuStrip1
             // 
@@ -331,9 +321,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 466);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.dgProductsView);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmProducts";
@@ -356,15 +346,10 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgProductsView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox gbSearch;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.RadioButton rbSearchByYearlyPremium;
         private System.Windows.Forms.RadioButton rbSearchByProductName;
@@ -380,5 +365,9 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

@@ -33,99 +33,94 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             if (validateForm())
             {
+
                 //Sales sale = new Sales(0,
-                //    txtFirstName.Text,
-                //    txtLastName.Text,
-                //    cbProduct.Text,
+                //    int.Parse(txtCustomerID.Text),
+                //    int.Parse(txtProductID.Text),
                 //    cbPayable.Text,
                 //    dtpStartDate.Value);
 
+                Sales sale = new Sales();
 
-                //using (var conn = ConnectionManager.DatabaseConnection())
-                //using (var cmd = new SqlCommand("sp_Customers_CreateSale ", conn)
-                //{
-                //    CommandType = CommandType.StoredProcedure
-                //})
-                //{
-                //    cmd.Parameters.AddWithValue("@FirstName", sale.FirstName);
-                //    cmd.Parameters.AddWithValue("@LastName", sale.LastName);
-                //    cmd.Parameters.AddWithValue("@Address", sale.ProductID);
-                //    cmd.Parameters.AddWithValue("@Suburb", sale.Payable);
-                //    cmd.Parameters.AddWithValue("@State", sale.StartDate);
+                using (var conn = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand("sp_Customers_CreateSale ", conn))
+                {
+                    //CommandType = CommandType.StoredProcedure })
 
-                //    cmd.Parameters.AddWithValue("@NewSaleID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlParameter newsaleid = cmd.Parameters.Add("NewSaleID", SqlDbType.Int); //~~~~~~~~~~~
+                    newsaleid.Direction = ParameterDirection.Output;
+                    
+                    cmd.Parameters.AddWithValue("CustomerID", sale.CustomerID);
+                    cmd.Parameters.AddWithValue("ProductID", sale.ProductID);
+                    cmd.Parameters.AddWithValue("Payable", sale.Payable);
+                    cmd.Parameters.AddWithValue("StartDate", sale.StartDate);
+                    cmd.Parameters.AddWithValue("@NewSaleID", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                //    cmd.Transaction = conn.BeginTransaction();
-                //    cmd.ExecuteNonQuery();
-                //    cmd.Transaction.Commit();
-                //}
-                ////Add closing confirmation here
-                //this.Close();
+                    cmd.Transaction = conn.BeginTransaction();
+                    cmd.ExecuteNonQuery();
+                    cmd.Transaction.Commit();
+                }
+
+                //Add closing confirmation here
+                this.Close();
             }
         }
         
 
         private bool validateForm()
         {
-            if (String.IsNullOrEmpty(txtFirstName.Text))
-            {
-                MessageBox.Show("Please enter the first name.");
-                return false;
-            }
+            // Customer ID should generate itself ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            if (String.IsNullOrEmpty(txtLastName.Text))
-            {
-                MessageBox.Show("Please enter the Last name.");
-                return false;
-            }
-
-            if (String.IsNullOrEmpty(cbProduct.Text))
-            {
-                MessageBox.Show("Please select a Category.");
-                return false;
-            }
 
             if (String.IsNullOrEmpty(cbPayable.Text))
             {
-                MessageBox.Show("Please enter an Address.");
+                MessageBox.Show("Please select a Payable period.");
                 return false;
             }
-            //Need one for the Start Date
 
+            if (String.IsNullOrEmpty(dtpStartDate.Text))
+            {
+                MessageBox.Show("Please select a Start Date.");
+                return false;
+            }
             return true;
         }
 
         private void frmSalesAdd_Load(object sender, EventArgs e)
         {
 
-            //string populateSales = "SELECT Product, Payable FROM Sales"; //right?
-            //List<Sales> salesList = new List<Sales>();
-            //try
-            //{
-            //    using (var con = ConnectionManager.DatabaseConnection())
-            //    using (var cmd = new SqlCommand(populateSales, con))
-            //    using (var rdr = cmd.ExecuteReader())
-            //    {
-            //        while (rdr.Read())
-            //        {
-            //            var sales = new Sales(rdr["Product"].ToString(), rdr["Payable"].ToString());
-                    
-            //            salesList.Add(sales);
-            //        }
-            //    }
-            //    cbProduct.DataSource = salesList;
-            //    cbPayable.DataSource = salesList;
-                
-            //    cbPayable.DisplayMember = "Payable";
-            //    cbPayable.ValueMember = "Payable";
+            string populateSales = "SELECT * FROM Sales"; //right? ~~~~~~~~~~~~~~~~~~~~~
+            List<Sales> salesList = new List<Sales>();
+            try
+            {
+                using (var con = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand(populateSales, con))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        var sales = new Sales
+                        (int.Parse(rdr["SaleID"].ToString()),
+                         int.Parse(rdr["CustomerID"].ToString()),
+                         int.Parse(rdr["ProductID"].ToString()),
+                         rdr["Payable"].ToString(),
+                         DateTime.Parse(rdr["StartDate"].ToString())
+                         );
 
-            //    cbProduct.DisplayMember = "Product";
-            //    cbProduct.ValueMember = "Product";
-            //}
-            //catch
-            //{
-            //    //catch error here
-            //}
+                        salesList.Add(sales);
+                    }
+                }
+                cbPayable.DataSource = salesList;
+
+                cbPayable.DisplayMember = "Payable";
+                cbPayable.ValueMember = "Payable";
+
+            }
+            catch
+            {
+                //catch error here
+            }
 
 
 
@@ -183,6 +178,16 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             Form frm1 = new frmAbout();
             frm1.ShowDialog(this);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCustomerID.Clear();
+            txtCustomerID.Clear();
+            txtProductID.Clear();
+            cbPayable.SelectedIndex = -1;
+            //Start Date? ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
         }
     }
 }

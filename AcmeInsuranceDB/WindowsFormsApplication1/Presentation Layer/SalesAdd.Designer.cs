@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbProduct = new System.Windows.Forms.ComboBox();
             this.cbPayable = new System.Windows.Forms.ComboBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblProduct = new System.Windows.Forms.Label();
             this.lblPayable = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbSalesDetails = new System.Windows.Forms.GroupBox();
+            this.lblProductID = new System.Windows.Forms.Label();
+            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,60 +55,25 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cbProduct
-            // 
-            this.cbProduct.FormattingEnabled = true;
-            this.cbProduct.Location = new System.Drawing.Point(153, 162);
-            this.cbProduct.Name = "cbProduct";
-            this.cbProduct.Size = new System.Drawing.Size(200, 24);
-            this.cbProduct.TabIndex = 2;
-            // 
             // cbPayable
             // 
             this.cbPayable.FormattingEnabled = true;
-            this.cbPayable.Location = new System.Drawing.Point(141, 183);
+            this.cbPayable.Location = new System.Drawing.Point(141, 123);
             this.cbPayable.Name = "cbPayable";
             this.cbPayable.Size = new System.Drawing.Size(200, 24);
             this.cbPayable.TabIndex = 3;
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(141, 229);
+            this.dtpStartDate.Location = new System.Drawing.Point(141, 165);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
             this.dtpStartDate.TabIndex = 4;
             // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(21, 47);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(80, 17);
-            this.lblFirstName.TabIndex = 5;
-            this.lblFirstName.Text = "First Name:";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(21, 91);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(80, 17);
-            this.lblLastName.TabIndex = 6;
-            this.lblLastName.Text = "Last Name:";
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(21, 137);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(61, 17);
-            this.lblProduct.TabIndex = 7;
-            this.lblProduct.Text = "Product:";
-            // 
             // lblPayable
             // 
             this.lblPayable.AutoSize = true;
-            this.lblPayable.Location = new System.Drawing.Point(21, 183);
+            this.lblPayable.Location = new System.Drawing.Point(21, 123);
             this.lblPayable.Name = "lblPayable";
             this.lblPayable.Size = new System.Drawing.Size(63, 17);
             this.lblPayable.TabIndex = 8;
@@ -119,39 +82,26 @@
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(21, 227);
+            this.lblStartDate.Location = new System.Drawing.Point(21, 167);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(76, 17);
             this.lblStartDate.TabIndex = 9;
             this.lblStartDate.Text = "Start Date:";
             // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(153, 74);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(200, 22);
-            this.txtFirstName.TabIndex = 10;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(153, 118);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(200, 22);
-            this.txtLastName.TabIndex = 11;
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(130, 338);
+            this.btnClear.Location = new System.Drawing.Point(130, 257);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(247, 338);
+            this.btnCancel.Location = new System.Drawing.Point(247, 257);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -162,7 +112,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 338);
+            this.btnAdd.Location = new System.Drawing.Point(13, 257);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
@@ -173,19 +123,52 @@
             // 
             // gbSalesDetails
             // 
-            this.gbSalesDetails.Controls.Add(this.lblLastName);
-            this.gbSalesDetails.Controls.Add(this.lblFirstName);
-            this.gbSalesDetails.Controls.Add(this.lblProduct);
+            this.gbSalesDetails.Controls.Add(this.lblProductID);
+            this.gbSalesDetails.Controls.Add(this.lblCustomerID);
+            this.gbSalesDetails.Controls.Add(this.txtProductID);
+            this.gbSalesDetails.Controls.Add(this.txtCustomerID);
             this.gbSalesDetails.Controls.Add(this.lblPayable);
             this.gbSalesDetails.Controls.Add(this.lblStartDate);
             this.gbSalesDetails.Controls.Add(this.dtpStartDate);
             this.gbSalesDetails.Controls.Add(this.cbPayable);
             this.gbSalesDetails.Location = new System.Drawing.Point(12, 32);
             this.gbSalesDetails.Name = "gbSalesDetails";
-            this.gbSalesDetails.Size = new System.Drawing.Size(392, 282);
+            this.gbSalesDetails.Size = new System.Drawing.Size(392, 211);
             this.gbSalesDetails.TabIndex = 18;
             this.gbSalesDetails.TabStop = false;
             this.gbSalesDetails.Text = "Sales Details";
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(21, 84);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(78, 17);
+            this.lblProductID.TabIndex = 13;
+            this.lblProductID.Text = "Product ID:";
+            // 
+            // lblCustomerID
+            // 
+            this.lblCustomerID.AutoSize = true;
+            this.lblCustomerID.Location = new System.Drawing.Point(21, 44);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(89, 17);
+            this.lblCustomerID.TabIndex = 12;
+            this.lblCustomerID.Text = "Customer ID:";
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(141, 81);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(200, 22);
+            this.txtProductID.TabIndex = 11;
+            // 
+            // txtCustomerID
+            // 
+            this.txtCustomerID.Location = new System.Drawing.Point(141, 42);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(200, 22);
+            this.txtCustomerID.TabIndex = 10;
             // 
             // menuStrip1
             // 
@@ -217,42 +200,42 @@
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.customersToolStripMenuItem.Text = "&Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.salesToolStripMenuItem.Text = "&Sales";
             this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
             // categoriesToolStripMenuItem
             // 
             this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.categoriesToolStripMenuItem.Text = "C&ategories";
             this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.categoriesToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.productToolStripMenuItem.Text = "&Products";
             this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
             // 
             // productTypesToolStripMenuItem
             // 
             this.productTypesToolStripMenuItem.Name = "productTypesToolStripMenuItem";
-            this.productTypesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.productTypesToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.productTypesToolStripMenuItem.Text = "Product &Types";
             this.productTypesToolStripMenuItem.Click += new System.EventHandler(this.productTypesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -268,14 +251,14 @@
             // tutorialToolStripMenuItem
             // 
             this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
-            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.tutorialToolStripMenuItem.Text = "T&utorial";
             this.tutorialToolStripMenuItem.Click += new System.EventHandler(this.tutorialToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.aboutToolStripMenuItem.Text = "A&bout";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -283,14 +266,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 510);
+            this.ClientSize = new System.Drawing.Size(448, 320);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.cbProduct);
             this.Controls.Add(this.gbSalesDetails);
             this.Name = "frmSalesAdd";
             this.Text = "Add New Sale";
@@ -305,17 +285,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbProduct;
         private System.Windows.Forms.ComboBox cbPayable;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblPayable;
         private System.Windows.Forms.Label lblStartDate;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
@@ -331,5 +304,9 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tutorialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Label lblCustomerID;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.TextBox txtCustomerID;
     }
 }

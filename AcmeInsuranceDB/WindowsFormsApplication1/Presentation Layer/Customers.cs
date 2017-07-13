@@ -30,18 +30,17 @@ namespace AcmeInsuranceDB.Presentation_Layer
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmCustomersAdd viewForm = new frmCustomersAdd();
-            viewForm.ShowDialog();
-
+            viewForm.Show();
             this.Hide();
             
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            frmCustomerSearch viewForm = new frmCustomerSearch();
-            viewForm.Show();
-            this.Hide();
-        }
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    frmCustomerSearch viewForm = new frmCustomerSearch();
+        //    viewForm.Show();
+        //    this.Hide();
+        //}
 
 
 
@@ -69,7 +68,8 @@ namespace AcmeInsuranceDB.Presentation_Layer
                 {
                     while (rdr.Read())
                     {
-                        Customers customer = new Customers(int.Parse(rdr["CustomerID"].ToString()),
+                        Customers customer = new Customers(
+                         int.Parse(rdr["CustomerID"].ToString()),
                          rdr["FirstName"].ToString(),
                          rdr["LastName"].ToString(),
                          rdr["Address"].ToString(),
@@ -94,9 +94,17 @@ namespace AcmeInsuranceDB.Presentation_Layer
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmCustomersUpdate viewForm = new frmCustomersUpdate();
-            viewForm.Show();
-            this.Hide();
+            //if (dgCustomersView.SelectedRows > 0)
+            //{
+            //    DataGridViewRow selectedRow = dgCustomersView.SelectedRows[0];
+            //    var updateCustomer = (Customers)selectedRow.DataBoundItem;
+
+            //} //bracket should be below the form nav
+
+                frmCustomersUpdate viewForm = new frmCustomersUpdate();
+                viewForm.ShowDialog();
+                displayCustomers();
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -114,26 +122,26 @@ namespace AcmeInsuranceDB.Presentation_Layer
             }
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-            ////int selectedCustomerID = int.Parse(dgCustomersView.SelectedRows[0].Text);
+            //int selectedCustomerID = int.Parse(dgCustomersView.SelectedRows[0].Text);
 
-            //string deleteQuery = "sp_Customers_DeleteCustomer";
-            //DataGridViewRow selectedRow = dgCustomersView.SelectedRows[0]; //Selecting the row
-            //var deleteCustomer = (Customers)selectedRow.DataBoundItem; //setting deleteCustomer to an instance of the Customer Class of the selected row.
+            string deleteQuery = "sp_Customers_DeleteCustomer";
+            DataGridViewRow selectedRow = dgCustomersView.SelectedRows[0]; //Selecting the row
+            var deleteCustomer = (Customers)selectedRow.DataBoundItem; //setting deleteCustomer to an instance of the Customer Class of the selected row.
 
-            //SqlConnection conn = ConnectionManager.DatabaseConnection();
-            ////conn.Open();
-            //SqlCommand cmd = new SqlCommand(deleteQuery, conn);
+            SqlConnection conn = ConnectionManager.DatabaseConnection();
+            //conn.Open();
+            SqlCommand cmd = new SqlCommand(deleteQuery, conn);
 
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@CustomerID", dgCustomersView.Rows[0].Selected); //dgCustomersView.Rows[0].Selected ---> is that legit?
-            //cmd.Transaction = conn.BeginTransaction();
-            //cmd.ExecuteNonQuery();
-            //cmd.Transaction.Commit();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CustomerID", dgCustomersView.Rows[0].Selected); //dgCustomersView.Rows[0].Selected ---> is that legit?
+            cmd.Transaction = conn.BeginTransaction();
+            cmd.ExecuteNonQuery();
+            cmd.Transaction.Commit();
 
-            //conn.Close();
+            conn.Close();
 
-            ////dgCustomersView.Rows.Clear();
-            //displayCustomers();
+            //dgCustomersView.Rows.Clear();
+            displayCustomers();
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -234,6 +242,30 @@ namespace AcmeInsuranceDB.Presentation_Layer
             frm1.ShowDialog(this);
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //if (rbListAllRows.Checked == true)
+            //{//select all
+            //    //SELECT * FROM Customers;
+            //}
+
+            //if (rbSearchByLastName.Checked == true)
+            //{
+            //   // "WHERE LastName = '" + txtSearch.Text + "'";
+            //}
+
+            //if (rbSearchByCategory.Checked == true)
+            //{
+            //    //"WHERE Customers.CategoryID = " + cbCategory.Items[cbCategory.SelectedIndex].ToString() + "";
+            //}
+
+            //if (rbSearchByPostcode.Checked == true)
+            //{
+            //    //"WHERE Customers.Postcode = " + txtSearch.Text + "'";
+            //}
+
+            //this.Close();
+        }
     }
     }
 

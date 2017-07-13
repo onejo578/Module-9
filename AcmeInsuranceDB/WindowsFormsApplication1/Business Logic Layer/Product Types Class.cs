@@ -17,10 +17,10 @@ namespace AcmeInsuranceDB.Business_Logic_Layer
         public Product_Types_Class() { }
 
         //Parameterised Constructor
-        public Product_Types_Class(int producttypeID, string producttype)
+        public Product_Types_Class(int producttypeid, string producttype)
 
         {
-            ProductTypeID = producttypeID;
+            ProductTypeID = producttypeid;
             ProductType = producttype;
         }
 

@@ -34,12 +34,12 @@ namespace AcmeInsuranceDB.Presentation_Layer
             this.Hide();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            frmSalesSearch viewForm = new Presentation_Layer.frmSalesSearch();
-            viewForm.Show();
-            this.Hide();
-        }
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    frmSalesSearch viewForm = new Presentation_Layer.frmSalesSearch();
+        //    viewForm.Show();
+        //    this.Hide();
+        //}
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -134,6 +134,11 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             Form frm1 = new frmAbout();
             frm1.ShowDialog(this);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

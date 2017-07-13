@@ -11,20 +11,25 @@ namespace AcmeInsuranceDB.Business_Logic_Layer
         //Set-Get properties
 
         public int ProductID { get; set;}
+        public int ProductTypeID { get; set; }
         public string ProductName { get; set; }
         public int YearlyPremium { get; set; }
-        public string ProductTypeID { get; set; }
+
 
         //Declaring Default Constructor
         public Products() { }
 
         //Parameterised Constructor
-        public Products(string productname, int yearlypremium, string producttypeID)
+        public Products(int productid,
+                        int producttypeid,
+                        string productname,
+                        int yearlypremium)
 
         {
+            ProductID = productid;
+            ProductTypeID = producttypeid;
             ProductName = productname;
             YearlyPremium = yearlypremium;
-            ProductTypeID = producttypeID;
         }
 
     }

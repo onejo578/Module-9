@@ -40,8 +40,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
                     int.Parse(txtPostcode.Text),
                     (int)cbCategory.SelectedValue,
                     dtpBirthDate.Value);
-
-
+                
                 using (var conn = ConnectionManager.DatabaseConnection())
                 using (var cmd = new SqlCommand("sp_Customers_CreateCustomer ", conn)
                 {
@@ -217,6 +216,21 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             Form frm1 = new frmAbout();
             frm1.ShowDialog(this);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            // Birthdate? ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            rbMale.Checked = false;
+            rbFemale.Checked = false;
+            cbCategory.SelectedIndex = -1;
+            txtAddress.Clear();
+            txtSuburb.Clear();
+            cbState.SelectedIndex = -1;
+            txtPostcode.Clear();
+            txtCustomerID.Clear();
         }
     }
 }

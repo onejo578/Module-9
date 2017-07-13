@@ -26,38 +26,39 @@ namespace AcmeInsuranceDB.Presentation_Layer
             products.Show();
             this.Hide();
         }
-        
+
 
 
         private void frmProductsAdd_Load(object sender, EventArgs e)
         {
-            //  Pulling the Product Types into the combo box when form loads
+            //Pulling the Product Types into the combo box when form loads
 
+            //~~~~~~~~~~~~~~~~~~~~~doesn't work, but it DOES work in ProductTypes
+                string populateProductID = "SELECT * FROM ProductTypes";
+            List<Product_Types_Class> productTypeIDList = new List<Product_Types_Class>();
+            try
+            {
+                using (var con = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand(populateProductID, con))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        var producttypeID = new Product_Types_Class(int.Parse(rdr["ProductTypeID"].ToString()),
+                            rdr["ProductType"].ToString());
+                        productTypeIDList.Add(producttypeID);
+                    }
+                }
+                cbProductTypeID.DataSource = productTypeIDList;
+                cbProductTypeID.DisplayMember = "ProductTypeID";
 
-            //string populateProductID = "SELECT ProductTypeID FROM ProductTypes"; //Is that the right syntax? "ProductTypeID"?
-            //List<Product_Types_Class> productTypeIDList = new List<Product_Types_Class>();
-            //try
-            //{
-            //    using (var con = ConnectionManager.DatabaseConnection())
-            //    using (var cmd = new SqlCommand(populateProductID, con))
-            //    using (var rdr = cmd.ExecuteReader())
-            //    {
-            //        while (rdr.Read())
-            //        {
-            //            var producttypeID = new Product_Types_Class(/*int.Parse*/(rdr["ProductTypeID"].ToString()));
-            //            //Is it the class where we're calling it from? 
-            //            productTypeIDList.Add(producttypeID);
-            //        }
-            //    }
-            //    cbProductTypeID.DataSource = productTypeIDList;
-            //    cbProductTypeID.DisplayMember = "ProductTypeID";
-
-            //}
-            //catch
-            //{
-            //    //catch error here
-            //}
+            }
+            catch
+            {
+                //catch error here
+            }
         }
+
 
 
 
@@ -65,7 +66,7 @@ namespace AcmeInsuranceDB.Presentation_Layer
 
         private bool validateForm()
         {
-            if (String.IsNullOrEmpty(txtProductName.Text))
+            if (String.IsNullOrEmpty(txtProductID.Text))
             {
                 MessageBox.Show("Please enter the Product name.");
                 return false;
@@ -88,35 +89,34 @@ namespace AcmeInsuranceDB.Presentation_Layer
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //    if (validateForm())
-            //    {
-            //        Products products = new Products(
-            //            //0,
-            //            txtProductName.Text,
-            //            int.Parse(txtYearlyPremium.Text),
-            //            (int)cbProductTypeID.SelectedValue);
+            if (validateForm())
+            {
+                Products products = new Products(
+                    0,
+                    int.Parse(cbProductTypeID.Text),
+                    txtProductName.Text,
+                    int.Parse(txtYearlyPremium.Text));
+               
+                using (var conn = ConnectionManager.DatabaseConnection())
+                using (var cmd = new SqlCommand("sp_Products_CreateProduct ", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    //cmd.Parameters.AddWithValue("ProductID", products.ProductID);
+                    cmd.Parameters.AddWithValue("ProductTypeID", products.ProductTypeID);
+                    cmd.Parameters.AddWithValue("ProductName", products.ProductName);
+                    cmd.Parameters.AddWithValue("YearlyPremium", products.YearlyPremium);
 
+                    cmd.Parameters.AddWithValue("NewProductID", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-
-            //        using (var conn = ConnectionManager.DatabaseConnection())
-            //        using (var cmd = new SqlCommand("sp_Products_CreateProduct ", conn)
-            //        {
-            //            CommandType = CommandType.StoredProcedure
-            //        })
-            //        {
-            //            cmd.Parameters.AddWithValue("@ProductName", products.ProductName);
-            //            cmd.Parameters.AddWithValue("@YearlyPremium", products.YearlyPremium);
-            //            cmd.Parameters.AddWithValue("@ProductTypeID", products.ProductTypeID);
-
-            //            //cmd.Parameters.AddWithValue("@NewCustomerID", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-            //            cmd.Transaction = conn.BeginTransaction();
-            //            cmd.ExecuteNonQuery();
-            //            cmd.Transaction.Commit();
-            //        }
-            //        //Add closing confirmation here
-            //        this.Close();
-            //    }
+                    cmd.Transaction = conn.BeginTransaction();
+                    cmd.ExecuteNonQuery();
+                    cmd.Transaction.Commit();
+                }
+                //Add closing confirmation here
+                this.Close();
+            }
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,6 +170,11 @@ namespace AcmeInsuranceDB.Presentation_Layer
         {
             Form frm1 = new frmAbout();
             frm1.ShowDialog(this);
+        }
+
+        private void lblProductTypeID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

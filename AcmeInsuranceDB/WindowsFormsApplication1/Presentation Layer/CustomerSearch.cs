@@ -55,27 +55,22 @@ namespace AcmeInsuranceDB.Presentation_Layer
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //if (rbListAllRows.Checked == true)
-            //{//select all
-            //    //SELECT * FROM Customers;
-            //}
+            if (rbListAllRows.Checked == true)
+            {//select all
+                //SELECT* FROM Customers;
+            }
 
-            //if (rbSearchByLastName.Checked == true)
-            //{
-            //   // "WHERE LastName = '" + txtSearch.Text + "'";
-            //}
+            if (rbSearchByLastName.Checked == true)
+            {
+                // "WHERE LastName = '" + txtSearch.Text + "'";
+            }
+            
+            if (rbSearchByPostcode.Checked == true)
+            {
+                //"WHERE Customers.Postcode = " + txtSearch.Text + "'";
+            }
 
-            //if (rbSearchByCategory.Checked == true)
-            //{
-            //    //"WHERE Customers.CategoryID = " + cbCategory.Items[cbCategory.SelectedIndex].ToString() + "";
-            //}
-
-            //if (rbSearchByPostcode.Checked == true)
-            //{
-            //    //"WHERE Customers.Postcode = " + txtSearch.Text + "'";
-            //}
-
-            //this.Close();
+            this.Close();
         }
 
         private void frmCustomerSearch_Load_1(object sender, EventArgs e)

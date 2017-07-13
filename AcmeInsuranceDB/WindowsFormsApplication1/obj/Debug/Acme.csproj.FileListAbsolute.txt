@@ -33,7 +33,6 @@ E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeIns
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmAbout.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCategories.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCategoriesAdd.resources
-E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCategoriesSearch.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCustomers.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCustomersAdd.resources
 E:\Programming Stuff\Prog. Course\Module 9\Assessments\Module 9\Module-9\AcmeInsuranceDB\WindowsFormsApplication1\obj\Debug\AcmeInsuranceDB.Presentation_Layer.frmCustomerSearch.resources
